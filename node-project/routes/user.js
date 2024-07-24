@@ -1,13 +1,24 @@
 const express = require("express");
 const router = express.Router();
 
-//전체조회
 //http://localhost/member?page=1&search=choi
+//전체조회
 router.get("/", (req, res) => {
+  //쿼리스트링
   const page = req.query.page;
   const search = req.query.search;
   const data = req.query; // vo객체
-  res.send(`user query: ${page} ${search}`);
+
+  //세션
+  const email = req.session.email;
+
+  //쿠키 읽기
+  console.log("cookie : " + req.cookies.popupyn);
+
+  //쿠키 저장
+  res.cookie("email", email, { expires: new Date(Date.now() + 15000) });
+
+  res.send(`user query: ${email}`);
 });
 
 //단건조회
