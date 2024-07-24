@@ -8,7 +8,7 @@ const fileStore = require("session-file-store")(session);
 const app = express();
 const port = 3000;
 
-// app.use(cors());
+app.use(cors());
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
