@@ -3,6 +3,7 @@ const userRouter = require("./routes/user.js");
 
 const productRouter = require("./routes/product.js");
 const loginRouter = require("./routes/login.js");
+const customerRouter = require("./routes/customer_pool.js");
 
 const cors = require("cors");
 const morgan = require("morgan");
@@ -34,7 +35,7 @@ app.use(
       //secure: true,
       maxAge: 3600000, //1분
     },
-    store: new fileStore(),
+    // store: new fileStore(),
   })
 );
 
@@ -51,8 +52,11 @@ app.get("/", (rep, res) => {
 });
 
 app.use("/member", userRouter);
-app.use("/member", productRouter);
+app.use("/product", productRouter);
 app.use("/", loginRouter);
+app.use("/customer", customerRouter);
+
+//에러페이지
 
 app.listen(port, () => {
   console.log(`server running http://localhost:${port}`);
