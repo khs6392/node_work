@@ -4,6 +4,7 @@ const userRouter = require("./routes/user.js");
 const productRouter = require("./routes/product.js");
 const loginRouter = require("./routes/login.js");
 const customerRouter = require("./routes/customer_pool.js");
+const boardRouter = require("./routes/board.js");
 
 const cors = require("cors");
 const morgan = require("morgan");
@@ -15,7 +16,7 @@ const multer = require("multer");
 const upload = multer({ dest: "c:/temp" }); //업로드 제한, 업로드 위치 설정
 
 const app = express();
-const port = 3000;
+const port = 80;
 
 app.use(cors());
 app.use(express.static("public"));
@@ -55,6 +56,7 @@ app.use("/member", userRouter);
 app.use("/product", productRouter);
 app.use("/", loginRouter);
 app.use("/customer", customerRouter);
+app.use("/board", boardRouter);
 
 //에러페이지
 

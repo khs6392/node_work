@@ -4,7 +4,8 @@
 const mysql = require("mysql2");
 const csql = require("./customer_sql.js");
 const psql = require("./product_sql.js");
-const sql = { ...csql, ...psql };
+const bsql = require("./board_sql.js");
+const sql = { ...csql, ...psql, ...bsql };
 // mysql 접속 정보
 const conn = {
   host: "127.0.0.1",
