@@ -12,7 +12,7 @@ export default function BoardInfo() {
   const handlerDelete = async (e) => {
     if (window.confirm("삭제할까요?")) {
       await axios.delete("http://localhost:80/board/" + seq);
-      navigator("/BoardList");
+      navigator("/boardList");
     }
   };
 

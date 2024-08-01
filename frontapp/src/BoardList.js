@@ -51,9 +51,8 @@ export default function BoardList() {
           ))}
         </tbody>
       </Table>
-      {lastPage}
-      {[...Array(lastPage)].map((p) => (
-        <Link to={"/boardList?page=1" + p}>{p}</Link>
+      {[...Array(lastPage)].map((p, idx) => (
+        <Link to={"/boardList?page=" + (idx + 1)}> {idx + 1} </Link>
       ))}
     </>
   );
