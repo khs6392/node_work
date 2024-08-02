@@ -1,13 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
+import App from "./BoardComponent";
 import { BrowserRouter } from "react-router-dom";
-// import App from "./Comp14_reduxtoolkit";
-import App from "./LayoutComponent.js";
+import reportWebVitals from "./reportWebVitals";
 
 import "bootstrap/dist/css/bootstrap.min.css";
-
-import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
